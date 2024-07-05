@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai and Code</title>
+</head>
+<body style="background-color: rgb(26, 24, 27);color: aliceblue;">
+    <ul class="language">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement("li");
+        li.innerText = `${langName}`;//langName;
+        const ul = document.querySelector(".language");
+        ul.appendChild(li);
+    }
+    addLanguage("Java");
+    // addLanguage("Python");
+
+    //optimised way to add
+    function addLanguageOptimised(langName){
+        const li = document.createElement("li");
+        const addText = document.createTextNode(langName);
+        li.appendChild(addText);
+        const ul = document.querySelector(".language");
+        ul.appendChild(li);
+    }
+    addLanguageOptimised("GoLang");
+    addLanguageOptimised("Ruby");
+
+    //Editing
+    const li = document.querySelector(".language li");
+    li.innerText = "C++";
+
+    const secondLnng = document.querySelector(".language li:nth-child(2)");
+    secondLnnng.innerText = "React";
+
+    //optimised way to edit
+    const secondLnnngOptimised = document.createElement("li");
+    secondLnnngOptimised.innerText = "React";
+    secondLnng.replaceWith(secondLnnngOptimised);
+
+    //removing
+    const thirdLnnng = document.querySelector(".language li:nth-child(3)");
+    thirdLnnng.remove();
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai and Code</title>
+</head>
+<body style="background-color: rgb(26, 24, 27);color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".parent");//element
+    parent.style.backgroundColor = "green";
+    console.log(parent.children);//HTMLCollection
+    for (let i = 0; i < parent.children.length; i++) {
+        parent.children[i].style.color = "red";
+    }
+    // const days = document.querySelectorAll(".day");//NodeList
+    // days.forEach((day) => {
+    //     day.style.color = "black";
+    // })
+    parent.children[1].style.color = "black";
+
+    const day = document.querySelector(".day");
+    console.log(day);
+    console.log(day.previousElementSibling);
+    console.log(day.nextElementSibling);
+    console.log(day.parentElement);
+
+
+    console.log("NODES", parent.childNodes);//NodeList
+
+</script>
+</html>
